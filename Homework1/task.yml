@@ -1,22 +1,28 @@
-- hosts: all
-  tasks: 
-  - name: nstall the latest version of Apache
-    yum:
-      name: 
-       - httpd
-       - tree
-       - git
+- hosts: 45.55.42.106
+  become: true
+  tasks:
+  - name: Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+  
+  - name: Install Apache, Git and Tree
+    apt:
+      name:
+        - apache2
+        - git
+        - tree
       state: present
   
-  - name: Start service httpd, if not started
-    service:
-      name: httpd
+  - name: Start service Apache and make it permanent
+    service: 
+      name: apache2
       state: started
-      enabled: yes 
+      enabled: yes
 
   - name: Create user and add to groups
     service:
-      hosts: 138.197.72.210
+      
       become: yes
 
   tasks:
