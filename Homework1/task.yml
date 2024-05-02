@@ -1,0 +1,36 @@
+- hosts: all
+  tasks: 
+  - name: nstall the latest version of Apache
+    yum:
+      name: 
+       - httpd
+       - tree
+       - git
+      state: present
+  
+  - name: Start service httpd, if not started
+    service:
+      name: httpd
+      state: started
+      enabled: yes 
+
+  - name: Create user and add to groups
+    service:
+      hosts: 138.197.72.210
+      become: yes
+
+  tasks:
+    - name: Create user
+      user:
+        name: Nuriza
+        groups: kaizen, qa
+
+  tasks:
+    - name: Create user
+      user:
+        name: tester
+        groups: qa
+
+
+
+
