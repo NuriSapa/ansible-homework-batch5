@@ -7,5 +7,5 @@
     - name: Copy files
       copy:
         src: /path/to/Homework1/*  # Path to the local Homework1 folder
-        dest: /root/ ansible # Destination path on the remote machine
-        remote_src: yes  # Indicates that the source is on the remote machine
+        dest: /root/ansible # Destination path on the remote machine
+        
