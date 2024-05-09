@@ -1,0 +1,6 @@
+url: https://wordpress.org/latest.tar.gz
+dest1: /tmp/wordpress.tar.gz
+dest2: /tmp
+dest3: /var/www/html
+src1: /tmp/wordpress.tar.gz
+src2: /tmp/wordpress/.
