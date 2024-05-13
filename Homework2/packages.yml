@@ -1,3 +1,13 @@
+- name: Install Apache 
+  yum:
+    name: httpd
+
+- name: start Apache 
+  service: 
+    name: httpd
+    state: started 
+    enabled: yes 
+
 - name: Install packages
   yum:
     name:
@@ -6,3 +16,4 @@
       - epel-release
       - mysql
       - https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
